@@ -1,7 +1,10 @@
 # Orangutan
 
 
-<img src="docs/images/orangutan_emoji_top.png" alt="Orangutan Logo" width="400" align="right">
+<img src="docs/images/orangutan_emoji_middle.png" alt="Orangutan Logo" width="400" align="right">
+
+Orangutan [🦧](https://en.wikipedia.org/wiki/Orangutan) is a playground project to interact with local LLMs. It's meant to build all kinds of LLM agents to help me do some simple tasks faster.
+
 
 
 ## Setup
@@ -19,7 +22,7 @@ Reference
 
 We can use the following command to test the sever status.
 
-```
+```bash
 curl --request POST \
     --url http://localhost:8080/completion \
     --header "Content-Type: application/json" \
@@ -31,11 +34,11 @@ curl --request POST \
 
 ### Start python FastAPI server
 
-```
+```bash
 python -m pip install fastapi uvicorn
 ```
 
-```
+```bash
 cd server
 uvicorn main:app --reload
 ```
@@ -46,7 +49,9 @@ Reference
 
 ## Grammar correction
 
-```
+
+Curl llama.cpp
+```bash
 curl --request POST \
     --url http://localhost:8080/completion \
     --header "Content-Type: application/json" \
@@ -54,4 +59,15 @@ curl --request POST \
         "prompt": "[INST] Corrects and rephrase user text grammar and spelling errors delimited by triple backticks to standard English.Text=```she no went to market``` [/INST][INST] Output: She didn’t go the market. [/INST][INST] Text=```I like to lean english``` [/INST][INST] Output:",
         "n_predict": 128
     }' | jq
+```
+
+Curl Python server
+
+```bash
+curl --request POST \                                                                                                                    base 17:52:07
+    --url http://localhost:8000/check_grammar \
+    --header "Content-Type: application/json" \
+    --data '{
+        "input": "I likes learn english"
+    }'
 ```
