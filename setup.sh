@@ -4,7 +4,7 @@
 # Copid https://medium.com/@anchen.li/replace-grammarly-with-open-source-llm-e1751ad6cad2
 
 # Define the repository and model details
-REPO_URL="git@github.com:ggerganov/llama.cpp.git"
+REPO_URL="https://github.com/ggerganov/llama.cpp.git"
 REPO_DIR="llama.cpp"
 MODEL_URL="https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q5_K_M.gguf"
 MODEL_FILE="mistral-7b-instruct-v0.1.Q5_K_M.gguf"
